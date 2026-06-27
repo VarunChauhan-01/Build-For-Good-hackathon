@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const chatController = require('../controllers/chatController');
+const { optionalAuth } = require('../middleware/auth');
+
+router.post('/message', optionalAuth, chatController.sendMessage);
+router.get('/history', optionalAuth, chatController.getHistory);
+router.delete('/history', optionalAuth, chatController.clearHistory);
+
+module.exports = router;

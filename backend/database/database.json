@@ -1,0 +1,315 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@jeevansetu.in",
+      "password_hash": "$2a$10$J/wdzUtBHZLCZ6z4J1zCUe7VW5ZbA1dFwERlNmjQJ8ybrBiCkGkF2",
+      "role": "admin",
+      "is_verified": 1,
+      "trust_score": 100,
+      "reports_count": 0,
+      "strikes": 0,
+      "status": "active",
+      "created_at": "2026-06-27T11:54:26.918Z",
+      "last_login": "2026-06-27T11:56:38.778Z"
+    },
+    {
+      "id": 2,
+      "name": "Ramesh Pujari",
+      "email": "ramesh@example.com",
+      "password_hash": "$2a$10$BWodegtf7NAoU9lLinf0H.b62rWol/upwyZr4hMilL4075.TtdsW2",
+      "role": "user",
+      "is_verified": 1,
+      "trust_score": 92,
+      "reports_count": 0,
+      "strikes": 0,
+      "status": "active",
+      "created_at": "2026-06-27T11:54:26.919Z",
+      "aadhaar_masked": "XXXX-XXXX-1234"
+    },
+    {
+      "id": 3,
+      "name": "Suspicious User",
+      "email": "scam@example.com",
+      "password_hash": "$2a$10$BWodegtf7NAoU9lLinf0H.b62rWol/upwyZr4hMilL4075.TtdsW2",
+      "role": "user",
+      "is_verified": 0,
+      "trust_score": 30,
+      "reports_count": 5,
+      "strikes": 2,
+      "status": "flagged",
+      "created_at": "2026-06-27T11:54:26.919Z",
+      "aadhaar_masked": "XXXX-XXXX-9999"
+    },
+    {
+      "name": "E2E Test User",
+      "email": "e2e-1782561398274@test.com",
+      "password_hash": "$2a$10$dxozG979j5/9JjpKpSQubOxCpf5Gi4NzTfc4a0FmwmRIvkc1/QB8W",
+      "phone": null,
+      "is_verified": 1,
+      "trust_score": 95,
+      "role": "user",
+      "reports_count": 0,
+      "strikes": 0,
+      "status": "active",
+      "id": 4,
+      "created_at": "2026-06-27T11:56:38.450Z",
+      "last_login": "2026-06-27T11:56:38.605Z",
+      "aadhaar_masked": "XXXX-XXXX-9012"
+    },
+    {
+      "name": "Rishita Singh.",
+      "email": "rishitasingh4100@gmail.com",
+      "password_hash": "$2a$10$d1Y.fhM3YYnEMAHrClndXOZKfOvdRnLP7cizYZ0AxYDaQu9nAtrz2",
+      "phone": "7678387962",
+      "is_verified": 0,
+      "trust_score": 75,
+      "role": "user",
+      "reports_count": 0,
+      "strikes": 0,
+      "status": "active",
+      "id": 5,
+      "created_at": "2026-06-27T11:58:50.225Z",
+      "language": "en",
+      "location": "Made at.",
+      "profession": "Bijli Mystery.",
+      "experience": "Char Saul."
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Harvesting Helper",
+      "employer": "Sunil Choudhary",
+      "trust_score": 97,
+      "pay": "₹450/day",
+      "distance": "1.5 km",
+      "location": "Ganaur Village",
+      "category": "Agriculture",
+      "verified": 1
+    },
+    {
+      "id": 2,
+      "title": "House Painter",
+      "employer": "Rajesh Sharma",
+      "trust_score": 92,
+      "pay": "₹750/day",
+      "distance": "3.2 km",
+      "location": "Model Town",
+      "category": "Painter",
+      "verified": 1
+    },
+    {
+      "id": 3,
+      "title": "Home Electrician",
+      "employer": "Karan Mehra",
+      "trust_score": 89,
+      "pay": "₹600/day",
+      "distance": "4.8 km",
+      "location": "Narela",
+      "category": "Electrician",
+      "verified": 0
+    },
+    {
+      "id": 4,
+      "title": "Carpenter Helper",
+      "employer": "Vikas Furniture",
+      "trust_score": 95,
+      "pay": "₹700/day",
+      "distance": "2.0 km",
+      "location": "Industrial Area",
+      "category": "Carpenter",
+      "verified": 1
+    }
+  ],
+  "applications": [
+    {
+      "job_id": 1,
+      "user_id": 5,
+      "method": "voice",
+      "voice_transcript": "I want to apply and do. My qualifications are.",
+      "status": "Applied",
+      "id": 1,
+      "created_at": "2026-06-27T12:57:43.891Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "reporter": "Sunil Choudhary",
+      "reported_user": "Suspicious User",
+      "type": "No Show",
+      "reason": "Agreed to work but never arrived",
+      "severity": "Medium",
+      "status": "pending",
+      "created_at": "2026-06-27T11:54:26.919Z"
+    },
+    {
+      "id": 2,
+      "reporter": "Vikas Furniture",
+      "reported_user": "Suspicious User",
+      "type": "Fraud",
+      "reason": "Asked for advance payment then blocked me",
+      "severity": "Critical",
+      "status": "pending",
+      "created_at": "2026-06-27T11:54:26.919Z"
+    }
+  ],
+  "chatHistory": [
+    {
+      "user_id": 4,
+      "text": "hello",
+      "sender": "user",
+      "is_voice": 0,
+      "id": 1,
+      "created_at": "2026-06-27T11:56:38.629Z"
+    },
+    {
+      "user_id": 4,
+      "text": "Namaste! 🙏 How can I help you today? I can assist with finding jobs, agriculture support, profile verification, and more.",
+      "sender": "ai",
+      "is_voice": 0,
+      "id": 2,
+      "created_at": "2026-06-27T11:56:38.631Z"
+    },
+    {
+      "user_id": 5,
+      "text": "how to make portfolio and apply for jobs",
+      "sender": "user",
+      "is_voice": 0,
+      "id": 3,
+      "created_at": "2026-06-27T13:21:37.601Z"
+    },
+    {
+      "user_id": 5,
+      "text": "I can help you find local jobs! We have openings in Agriculture, Carpentry, Electrician, Painting, Plumbing, and Daily Wage categories. Would you like me to search for a specific type of work?",
+      "sender": "ai",
+      "is_voice": 0,
+      "id": 4,
+      "created_at": "2026-06-27T13:21:37.604Z"
+    }
+  ],
+  "laborers": [
+    {
+      "id": 1,
+      "name": "Sanjay Kumar",
+      "skills": "Wheat Harvesting, Seeding",
+      "rating": 4.8,
+      "experience": "8 Yrs",
+      "pay": "₹400/day",
+      "location": "1.2 km away",
+      "status": "Available"
+    },
+    {
+      "id": 2,
+      "name": "Ramesh Pujari",
+      "skills": "Tractor Driver, Irrigation",
+      "rating": 4.9,
+      "experience": "6 Yrs",
+      "pay": "₹450/day",
+      "location": "3.0 km away",
+      "status": "Available"
+    },
+    {
+      "id": 3,
+      "name": "Jatin Das",
+      "skills": "Pesticide Spray, Planting",
+      "rating": 4.6,
+      "experience": "4 Yrs",
+      "pay": "₹380/day",
+      "location": "2.5 km away",
+      "status": "Booked"
+    }
+  ],
+  "equipment": [
+    {
+      "id": 1,
+      "name": "Mahindra Arjun Tractor",
+      "owner": "Devender Singh",
+      "rate": "₹800/hr",
+      "type": "Tractor",
+      "distance": "1.8 km",
+      "status": "Rented"
+    },
+    {
+      "id": 2,
+      "name": "John Deere Harvester",
+      "owner": "Satish Grewal",
+      "rate": "₹2,200/hr",
+      "type": "Harvester",
+      "distance": "4.0 km",
+      "status": "Rented"
+    },
+    {
+      "id": 3,
+      "name": "Rotavator Tiller",
+      "owner": "Jagbir Singh",
+      "rate": "₹350/hr",
+      "type": "Tiller",
+      "distance": "2.2 km",
+      "status": "Rented"
+    }
+  ],
+  "mandiPrices": [
+    {
+      "id": 1,
+      "crop": "Wheat (Gehun)",
+      "sonipat": "₹2,275/qtl",
+      "narela": "₹2,300/qtl",
+      "rohtak": "₹2,260/qtl",
+      "trend": "up"
+    },
+    {
+      "id": 2,
+      "crop": "Paddy (Dhan)",
+      "sonipat": "₹4,150/qtl",
+      "narela": "₹4,220/qtl",
+      "rohtak": "₹4,120/qtl",
+      "trend": "up"
+    },
+    {
+      "id": 3,
+      "crop": "Potato (Aloo)",
+      "sonipat": "₹1,400/qtl",
+      "narela": "₹1,450/qtl",
+      "rohtak": "₹1,380/qtl",
+      "trend": "down"
+    },
+    {
+      "id": 4,
+      "crop": "Mustard (Sarson)",
+      "sonipat": "₹5,450/qtl",
+      "narela": "₹5,500/qtl",
+      "rohtak": "₹5,420/qtl",
+      "trend": "down"
+    }
+  ],
+  "verifications": [
+    {
+      "user_id": 4,
+      "aadhaar_masked": "XXXX-XXXX-9012",
+      "status": "verified",
+      "id": 1,
+      "created_at": "2026-06-27T11:56:38.622Z"
+    }
+  ],
+  "bookings": [
+    {
+      "item_id": "2",
+      "item_type": "equipment",
+      "user_id": "5",
+      "status": "Rented",
+      "id": 1,
+      "created_at": "2026-06-27T13:17:28.352Z"
+    },
+    {
+      "item_id": "1",
+      "item_type": "equipment",
+      "user_id": "5",
+      "status": "Rented",
+      "id": 2,
+      "created_at": "2026-06-27T13:17:34.210Z"
+    }
+  ]
+}
