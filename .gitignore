@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+.env
+*.env
+.env.*
+node_modules/
+backend/node_modules/
+dist/
+.DS_Store
+=======
 # Ignore all node_modules folders anywhere in the project
 node_modules/
 **/node_modules/
@@ -12,3 +21,4 @@ dist/
 build/
 .vscode/
 *.log
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70

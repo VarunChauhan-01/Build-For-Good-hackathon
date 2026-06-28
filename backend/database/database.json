@@ -57,6 +57,10 @@
       "created_at": "2026-06-27T11:56:38.450Z",
       "last_login": "2026-06-27T11:56:38.605Z",
       "aadhaar_masked": "XXXX-XXXX-9012"
+<<<<<<< HEAD
+    }
+    
+=======
     },
     {
       "name": "Rishita Singh.",
@@ -76,6 +80,7 @@
       "profession": "Bijli Mystery.",
       "experience": "Char Saul."
     }
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
   ],
   "jobs": [
     {

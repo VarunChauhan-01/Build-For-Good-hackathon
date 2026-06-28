@@ -20,15 +20,26 @@ async function seed() {
     // 1. Create Users
     const users = await User.create([
       { name: 'Admin User', email: 'admin@jeevansetu.in', password_hash: adminHash, role: 'admin', is_verified: 1, trust_score: 100, reports_count: 0, strikes: 0, status: 'active' },
+<<<<<<< HEAD
+      { name: 'Ramesh Kumar', email: 'ramesh@example.com', password_hash: userHash, role: 'user', is_verified: 1, trust_score: 92, reports_count: 0, strikes: 0, status: 'active', aadhaar_masked: 'XXXX-XXXX-1234' },
+=======
       { name: 'Ramesh Pujari', email: 'ramesh@example.com', password_hash: userHash, role: 'user', is_verified: 1, trust_score: 92, reports_count: 0, strikes: 0, status: 'active', aadhaar_masked: 'XXXX-XXXX-1234' },
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
       { name: 'Suspicious User', email: 'scam@example.com', password_hash: userHash, role: 'user', is_verified: 0, trust_score: 30, reports_count: 5, strikes: 2, status: 'flagged', aadhaar_masked: 'XXXX-XXXX-9999' }
     ]);
     
     // 2. Create Jobs
     await Job.create([
       { title: 'Harvesting Helper', employer: 'Sunil Choudhary', trust_score: 97, pay: '₹450/day', distance: '1.5 km', location: 'Ganaur Village', category: 'Agriculture', verified: 1, postedBy: users[1]._id },
+<<<<<<< HEAD
+      { title: 'House Painter', employer: 'Rajesh Kumar', trust_score: 92, pay: '₹750/day', distance: '3.2 km', location: 'Model Town', category: 'Painter', verified: 1, postedBy: users[1]._id },
+      { title: 'Home Electrician', employer: 'Karan Kundra', trust_score: 89, pay: '₹600/day', distance: '4.8 km', location: 'Narela', category: 'Electrician', verified: 0, postedBy: users[2]._id },
+      { title: 'House keeping', employer: 'Ramesh paul', trust_score: 92, pay: '₹850/day', distance: '3.2 km', location: 'Model Town', category: 'Painter', verified: 1, postedBy: users[1]._id },
+     
+=======
       { title: 'House Painter', employer: 'Rajesh Sharma', trust_score: 92, pay: '₹750/day', distance: '3.2 km', location: 'Model Town', category: 'Painter', verified: 1, postedBy: users[1]._id },
       { title: 'Home Electrician', employer: 'Karan Mehra', trust_score: 89, pay: '₹600/day', distance: '4.8 km', location: 'Narela', category: 'Electrician', verified: 0, postedBy: users[2]._id },
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
       { title: 'Carpenter Helper', employer: 'Vikas Furniture', trust_score: 95, pay: '₹700/day', distance: '2.0 km', location: 'Industrial Area', category: 'Carpenter', verified: 1, postedBy: users[1]._id }
     ]);
     
@@ -41,7 +52,11 @@ async function seed() {
     // 4. Create Workers (Laborers)
     await Worker.create([
       { name: 'Sanjay Kumar', skills: 'Wheat Harvesting, Seeding', rating: 4.8, experience: '8 Yrs', pay: '₹400/day', location: '1.2 km away', status: 'Available' },
+<<<<<<< HEAD
+      { name: 'Ramesh Kumar', skills: 'Tractor Driver, Irrigation', rating: 4.9, experience: '6 Yrs', pay: '₹450/day', location: '3.0 km away', status: 'Available' },
+=======
       { name: 'Ramesh Pujari', skills: 'Tractor Driver, Irrigation', rating: 4.9, experience: '6 Yrs', pay: '₹450/day', location: '3.0 km away', status: 'Available' },
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
       { name: 'Jatin Das', skills: 'Pesticide Spray, Planting', rating: 4.6, experience: '4 Yrs', pay: '₹380/day', location: '2.5 km away', status: 'Booked' }
     ]);
     

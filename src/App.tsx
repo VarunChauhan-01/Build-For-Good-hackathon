@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+=======
 import React, { useState, useEffect } from 'react';
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 import {
   ShieldCheck,
   Menu,
@@ -9,9 +13,13 @@ import {
   Globe2,
   Lock,
   UserCheck,
+<<<<<<< HEAD
+  ChevronDown
+=======
   ChevronDown,
   LogOut,
   LogIn
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 } from 'lucide-react';
 import { useTheme } from './context/ThemeContext';
 import LandingPage from './components/LandingPage';
@@ -21,9 +29,12 @@ import JobSearch from './components/JobSearch';
 import FarmerHub from './components/FarmerHub';
 import VerificationSystem from './components/VerificationSystem';
 import AdminDashboard from './components/AdminDashboard';
+<<<<<<< HEAD
+=======
 import { AIAssistant } from './components/AIAssistant';
 import AuthModal from './components/AuthModal';
 import { getStoredUser, clearToken } from './services/api';
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 
 export const App: React.FC = () => {
   const {
@@ -33,13 +44,26 @@ export const App: React.FC = () => {
     toggleHighContrast,
     language,
     setLanguage,
+<<<<<<< HEAD
+=======
     t,
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
   } = useTheme();
 
   const [activePage, setActivePage] = useState<string>('landing');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 
+<<<<<<< HEAD
+  const pages = [
+    { id: 'landing', label: 'Home' },
+    { id: 'dashboard', label: 'Dashboard' },
+    { id: 'jobs', label: 'Job Search' },
+    { id: 'voice-registration', label: 'Voice Register' },
+    { id: 'farmer-hub', label: 'Farmer Hub' },
+    { id: 'verification', label: 'Verification' },
+    { id: 'admin', label: 'Admin Panel' },
+=======
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
 
@@ -69,6 +93,7 @@ export const App: React.FC = () => {
     { id: 'farmer-hub', label: t('farmerHub') },
     { id: 'verification', label: t('verification') },
     { id: 'admin', label: t('adminPanel') },
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
   ];
 
   const languages = [
@@ -113,6 +138,22 @@ export const App: React.FC = () => {
 
   return (
     <div className={`min-h-screen flex flex-col ${darkMode ? 'dark bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
+<<<<<<< HEAD
+      
+      {/* Top Banner Notice */}
+      <div className="w-full bg-gradient-to-r from-govBlue-800 to-govGreen-900 text-white text-[11px] py-1.5 px-4 text-center font-medium flex items-center justify-center gap-2 select-none border-b border-white/5">
+        <Lock className="w-3 h-3 text-teal-400" />
+        <span>Official Government Technology Initiative Sandbox Sandbox Environment. 100% Secure.</span>
+      </div>
+
+      {/* Sticky Glassmorphism Header */}
+      <header className={`sticky top-0 z-40 w-full transition-colors border-b ${
+        darkMode ? 'glass-navbar-dark' : 'glass-navbar'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            
+=======
 
       {/* Top Banner Notice */}
       <div className="w-full bg-gradient-to-r from-govBlue-800 to-govGreen-900 text-white text-[11px] py-1.5 px-4 text-center font-medium flex items-center justify-center gap-2 select-none border-b border-white/5">
@@ -125,6 +166,7 @@ export const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
 
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
             {/* Logo */}
             <button
               onClick={() => handleNavClick('landing')}
@@ -138,7 +180,11 @@ export const App: React.FC = () => {
                   JeevanSetu
                   <span className="text-[10px] bg-teal-500/10 dark:bg-teal-500/25 text-teal-600 dark:text-teal-400 px-1.5 py-0.2 rounded border border-teal-500/20 font-bold">AI</span>
                 </span>
+<<<<<<< HEAD
+                <span className="text-[9px] text-slate-400 block -mt-0.5">Government employment ecosystem</span>
+=======
                 <span className="text-[9px] text-slate-400 block -mt-0.5">{t('appLogoSubtitle')}</span>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </div>
             </button>
 
@@ -148,12 +194,22 @@ export const App: React.FC = () => {
                 <button
                   key={p.id}
                   onClick={() => handleNavClick(p.id)}
+<<<<<<< HEAD
+                  className={`px-3 py-2 rounded-xl text-sm font-semibold transition-all ${
+                    activePage === p.id
+                      ? 'bg-govBlue-500 text-white shadow-md'
+                      : darkMode
+                        ? 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                  }`}
+=======
                   className={`px-3 py-2 rounded-xl text-sm font-semibold transition-all ${activePage === p.id
                     ? 'bg-govBlue-500 text-white shadow-md'
                     : darkMode
                       ? 'text-slate-300 hover:bg-slate-800 hover:text-white'
                       : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                     }`}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 >
                   {p.label}
                 </button>
@@ -166,12 +222,22 @@ export const App: React.FC = () => {
               <button
                 onClick={toggleHighContrast}
                 title="Toggle High Contrast Mode"
+<<<<<<< HEAD
+                className={`p-2 rounded-xl border transition-colors ${
+                  highContrast
+                    ? 'border-emerald-500 bg-emerald-500/10 text-emerald-600'
+                    : darkMode
+                      ? 'border-slate-800 hover:bg-slate-800 text-slate-400'
+                      : 'border-slate-200 hover:bg-slate-100 text-slate-500'
+                }`}
+=======
                 className={`p-2 rounded-xl border transition-colors ${highContrast
                   ? 'border-emerald-500 bg-emerald-500/10 text-emerald-600'
                   : darkMode
                     ? 'border-slate-800 hover:bg-slate-800 text-slate-400'
                     : 'border-slate-200 hover:bg-slate-100 text-slate-500'
                   }`}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               >
                 <Accessibility className="w-5 h-5" />
               </button>
@@ -180,10 +246,18 @@ export const App: React.FC = () => {
               <button
                 onClick={toggleDarkMode}
                 title="Toggle Dark Mode"
+<<<<<<< HEAD
+                className={`p-2 rounded-xl border transition-colors ${
+                  darkMode
+                    ? 'border-slate-800 bg-slate-800 hover:bg-slate-700 text-amber-400'
+                    : 'border-slate-200 bg-white hover:bg-slate-100 text-slate-500'
+                }`}
+=======
                 className={`p-2 rounded-xl border transition-colors ${darkMode
                   ? 'border-slate-800 bg-slate-800 hover:bg-slate-700 text-amber-400'
                   : 'border-slate-200 bg-white hover:bg-slate-100 text-slate-500'
                   }`}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               >
                 {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
@@ -192,8 +266,14 @@ export const App: React.FC = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+<<<<<<< HEAD
+                  className={`px-3 py-2 rounded-xl border font-semibold text-xs flex items-center gap-1.5 transition-colors ${
+                    darkMode ? 'border-slate-800 bg-slate-900/50 text-slate-300' : 'border-slate-200 bg-white text-slate-600'
+                  }`}
+=======
                   className={`px-3 py-2 rounded-xl border font-semibold text-xs flex items-center gap-1.5 transition-colors ${darkMode ? 'border-slate-800 bg-slate-900/50 text-slate-300' : 'border-slate-200 bg-white text-slate-600'
                     }`}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 >
                   <Globe2 className="w-4 h-4" />
                   {currentLanguageName}
@@ -201,8 +281,14 @@ export const App: React.FC = () => {
                 </button>
 
                 {isLangDropdownOpen && (
+<<<<<<< HEAD
+                  <div className={`absolute right-0 mt-2 w-32 rounded-xl border shadow-xl p-1 z-50 ${
+                    darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
+                  }`}>
+=======
                   <div className={`absolute right-0 mt-2 w-32 rounded-xl border shadow-xl p-1 z-50 ${darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
                     }`}>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     {languages.map((l) => (
                       <button
                         key={l.code}
@@ -210,8 +296,14 @@ export const App: React.FC = () => {
                           setLanguage(l.code);
                           setIsLangDropdownOpen(false);
                         }}
+<<<<<<< HEAD
+                        className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 block transition-colors ${
+                          language === l.code ? 'text-govBlue-500' : 'text-slate-600 dark:text-slate-300'
+                        }`}
+=======
                         className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 block transition-colors ${language === l.code ? 'text-govBlue-500' : 'text-slate-600 dark:text-slate-300'
                           }`}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                       >
                         {l.name}
                       </button>
@@ -219,6 +311,8 @@ export const App: React.FC = () => {
                   </div>
                 )}
               </div>
+<<<<<<< HEAD
+=======
 
               {/* Auth Button */}
               {user ? (
@@ -238,21 +332,34 @@ export const App: React.FC = () => {
                   {t('loginRegister')}
                 </button>
               )}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
             </div>
 
             {/* Mobile menu trigger */}
             <div className="flex lg:hidden items-center gap-2">
               <button
                 onClick={toggleDarkMode}
+<<<<<<< HEAD
+                className={`p-2 rounded-xl border transition-colors ${
+                  darkMode ? 'border-slate-800 text-amber-400' : 'border-slate-200 text-slate-500'
+                }`}
+=======
                 className={`p-2 rounded-xl border transition-colors ${darkMode ? 'border-slate-800 text-amber-400' : 'border-slate-200 text-slate-500'
                   }`}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               >
                 {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+<<<<<<< HEAD
+                className={`p-2 rounded-xl border ${
+                  darkMode ? 'border-slate-800 text-slate-300' : 'border-slate-200 text-slate-600'
+                }`}
+=======
                 className={`p-2 rounded-xl border ${darkMode ? 'border-slate-800 text-slate-300' : 'border-slate-200 text-slate-600'
                   }`}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -263,23 +370,41 @@ export const App: React.FC = () => {
 
         {/* Mobile Dropdown Panel */}
         {isMobileMenuOpen && (
+<<<<<<< HEAD
+          <div className={`lg:hidden border-t border-slate-200 dark:border-slate-800 p-4 space-y-3 z-50 absolute inset-x-0 top-16 shadow-2xl ${
+            darkMode ? 'bg-slate-900' : 'bg-white'
+          }`}>
+=======
           <div className={`lg:hidden border-t border-slate-200 dark:border-slate-800 p-4 space-y-3 z-50 absolute inset-x-0 top-16 shadow-2xl ${darkMode ? 'bg-slate-900' : 'bg-white'
             }`}>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
             <nav className="flex flex-col gap-1.5">
               {pages.map((p) => (
                 <button
                   key={p.id}
                   onClick={() => handleNavClick(p.id)}
+<<<<<<< HEAD
+                  className={`w-full text-left px-4 py-3 rounded-xl font-bold text-sm transition-all ${
+                    activePage === p.id
+                      ? 'bg-govBlue-500 text-white'
+                      : darkMode
+                        ? 'text-slate-300 hover:bg-slate-800'
+                        : 'text-slate-600 hover:bg-slate-100'
+                  }`}
+=======
                   className={`w-full text-left px-4 py-3 rounded-xl font-bold text-sm transition-all ${activePage === p.id
                     ? 'bg-govBlue-500 text-white'
                     : darkMode
                       ? 'text-slate-300 hover:bg-slate-800'
                       : 'text-slate-600 hover:bg-slate-100'
                     }`}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 >
                   {p.label}
                 </button>
               ))}
+<<<<<<< HEAD
+=======
 
               {user ? (
                 <button
@@ -296,6 +421,7 @@ export const App: React.FC = () => {
                   {t('loginRegister')}
                 </button>
               )}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
             </nav>
 
             <div className="flex gap-2 pt-3 border-t border-slate-200 dark:border-slate-800">
@@ -306,7 +432,11 @@ export const App: React.FC = () => {
                 <Accessibility className="w-4 h-4" />
                 Contrast
               </button>
+<<<<<<< HEAD
+              
+=======
 
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               <div className="flex-1 relative">
                 <select
                   value={language}
@@ -331,8 +461,14 @@ export const App: React.FC = () => {
       </main>
 
       {/* Corporate Govt Startup Footer */}
+<<<<<<< HEAD
+      <footer className={`border-t py-12 ${
+        darkMode ? 'bg-slate-950 border-slate-900 text-slate-500' : 'bg-slate-100 border-slate-200 text-slate-500'
+      }`}>
+=======
       <footer className={`border-t py-12 ${darkMode ? 'bg-slate-950 border-slate-900 text-slate-500' : 'bg-slate-100 border-slate-200 text-slate-500'
         }`}>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <div className="flex justify-center items-center gap-6 opacity-60">
             {/* Mock Digital India label */}
@@ -349,7 +485,11 @@ export const App: React.FC = () => {
               Ministry of IT Sandbox
             </div>
           </div>
+<<<<<<< HEAD
+          
+=======
 
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
           <p className="text-xs leading-relaxed max-w-2xl mx-auto">
             JeevanSetu employs Aadhaar Unified API queries, location geofencing, and natural language model analysis to build scam-free hiring connections. Built under sandbox guidelines for India’s informal worker population.
           </p>
@@ -360,8 +500,11 @@ export const App: React.FC = () => {
         </div>
       </footer>
 
+<<<<<<< HEAD
+=======
       <AIAssistant />
       <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} onSuccess={handleAuthSuccess} />
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
     </div>
   );
 };

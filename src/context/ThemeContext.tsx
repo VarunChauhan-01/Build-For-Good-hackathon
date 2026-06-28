@@ -1,6 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+<<<<<<< HEAD
+
+type LanguageType = 'hi' | 'en' | 'mr' | 'pa' | 'bn' | 'ta' | 'te' | 'gu';
+=======
 import { translations, getTranslation, LanguageType } from '../utils/translations';
 import { authAPI, getStoredUser } from '../services/api';
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 
 interface ThemeContextType {
   darkMode: boolean;
@@ -9,7 +14,10 @@ interface ThemeContextType {
   toggleHighContrast: () => void;
   language: LanguageType;
   setLanguage: (lang: LanguageType) => void;
+<<<<<<< HEAD
+=======
   t: (key: string) => string;
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -26,10 +34,13 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   });
 
   const [language, setLanguageState] = useState<LanguageType>(() => {
+<<<<<<< HEAD
+=======
     const savedUser = getStoredUser();
     if (savedUser?.language && translations[savedUser.language as LanguageType]) {
       return savedUser.language as LanguageType;
     }
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
     return (localStorage.getItem('language') as LanguageType) || 'en';
   });
 
@@ -55,6 +66,13 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
   const toggleHighContrast = () => setHighContrast(!highContrast);
+<<<<<<< HEAD
+  const setLanguage = (lang: LanguageType) => {
+    setLanguageState(lang);
+    localStorage.setItem('language', lang);
+  };
+
+=======
   
   const setLanguage = (lang: LanguageType) => {
     setLanguageState(lang);
@@ -68,6 +86,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const t = (key: string) => getTranslation(language, key);
 
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
   return (
     <ThemeContext.Provider
       value={{
@@ -77,7 +96,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         toggleHighContrast,
         language,
         setLanguage,
+<<<<<<< HEAD
+=======
         t,
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
       }}
     >
       {children}

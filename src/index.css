@@ -142,6 +142,8 @@
 html {
   scroll-behavior: smooth;
 }
+<<<<<<< HEAD
+=======
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    Voice Assistant Animations & Styles
@@ -232,3 +234,4 @@ html {
   50% { top: 100%; }
   100% { top: 0%; }
 }
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70

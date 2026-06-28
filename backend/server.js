@@ -1,7 +1,15 @@
+<<<<<<< HEAD
+require('dotenv').config();
+=======
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 /**
  * JeevanSetu Backend Server
  * Entry point - starts Express, mounts all routes, seeds DB.
  */
+<<<<<<< HEAD
+
+=======
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 const express = require('express');
 const cors = require('cors');
 const path = require('path');

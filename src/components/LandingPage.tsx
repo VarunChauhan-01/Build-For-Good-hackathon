@@ -32,19 +32,30 @@ import {
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import ScrollReveal from './ScrollReveal';
+<<<<<<< HEAD
+=======
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition';
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 
 interface LandingPageProps {
   onNavigate: (page: string) => void;
 }
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
+<<<<<<< HEAD
+  const { darkMode } = useTheme();
+=======
   const { darkMode, t } = useTheme();
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
   
   // Interactive micro-states for counters and demos
   const [workerScore, setWorkerScore] = useState(0);
   const [employerScore, setEmployerScore] = useState(0);
   const [activeLang, setActiveLang] = useState('en');
+<<<<<<< HEAD
+  const [isVoiceActive, setIsVoiceActive] = useState(false);
+  const [voiceText, setVoiceText] = useState('Click the mic to speak in your language...');
+=======
 
   const {
     transcript,
@@ -56,6 +67,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
     resetTranscript,
     isSupported
   } = useSpeechRecognition();
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
 
   // Animate progress rings on component load
   useEffect(() => {
@@ -78,6 +90,31 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
     { code: 'gu', name: 'ગુજરાતી', flag: '🇮🇳' },
   ];
 
+<<<<<<< HEAD
+  const handleVoiceDemo = () => {
+    setIsVoiceActive(!isVoiceActive);
+    if (!isVoiceActive) {
+      setVoiceText('Listening for dialect...');
+      const responses = [
+        'Recognizing: "Mujhe kheti ke kaam chahiye"...',
+        'Auto-translating: "I am looking for agricultural work"...',
+        'Perfect! Redirecting you to Farmer Hub...'
+      ];
+      responses.forEach((res, i) => {
+        setTimeout(() => {
+          setVoiceText(res);
+          if (i === responses.length - 1) {
+            setTimeout(() => {
+              onNavigate('voice-registration');
+              setIsVoiceActive(false);
+            }, 1000);
+          }
+        }, (i + 1) * 1500);
+      });
+    } else {
+      setVoiceText('Click the mic to speak in your language...');
+    }
+=======
   useEffect(() => {
     if (!isListening && transcript) {
       setTimeout(() => {
@@ -100,6 +137,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
     if (isListening) return interimTranscript || transcript || t('voiceListeningDialect');
     if (transcript) return `${t('voiceRecognized')}: "${transcript}" - ${t('voiceRedirecting')}`;
     return t('voiceClickMic');
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
   };
 
   return (
@@ -120,7 +158,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
         <ScrollReveal>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-teal-500/20 bg-teal-500/5 text-teal-700 dark:text-teal-300 text-xs font-semibold uppercase tracking-wider mb-6">
             <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+<<<<<<< HEAD
+            Empowering Rural & Urban India
+=======
             {t('heroTagline')}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
           </div>
         </ScrollReveal>
 
@@ -137,22 +179,38 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 <circle cx="1.5" cy="1" r="0.088" fill="#000080" />
                 <path d="M 1.5 0.778 L 1.5 1.222 M 1.278 1 L 1.722 1 M 1.343 0.843 L 1.657 1.157 M 1.343 1.157 L 1.657 0.843" stroke="#000080" strokeWidth="0.015" />
               </svg>
+<<<<<<< HEAD
+              <span>India's First</span>
+              <span className="text-emerald-600 dark:text-emerald-400">Aadhaar-Verified</span>
+            </span>
+            <span className="bg-gradient-to-r from-govBlue-800 to-slate-900 dark:from-sky-400 dark:to-white bg-clip-text text-transparent block mt-2">
+              Voice Hiring Platform
+=======
               <span>{t('heroTitle1')}</span>
               <span className="text-emerald-600 dark:text-emerald-400">{t('heroTitle2')}</span>
             </span>
             <span className="bg-gradient-to-r from-govBlue-800 to-slate-900 dark:from-sky-400 dark:to-white bg-clip-text text-transparent block mt-2">
               {t('heroTitle3')}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
             </span>
           </h1>
         </ScrollReveal>
 
         <ScrollReveal delay={200}>
           <p className="mt-8 text-lg sm:text-2xl font-bold max-w-3xl mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+<<<<<<< HEAD
+            <span className="text-govBlue-600 dark:text-sky-400">Zero Scams</span>
+            <span className="text-slate-300 dark:text-slate-700 font-normal select-none">•</span>
+            <span className="text-emerald-600 dark:text-emerald-400">Voice Registration</span>
+            <span className="text-slate-300 dark:text-slate-700 font-normal select-none">•</span>
+            <span className="text-govBlue-600 dark:text-sky-400">Jobs + Agriculture</span>
+=======
             <span className="text-govBlue-600 dark:text-sky-400">{t('heroZeroScams')}</span>
             <span className="text-slate-300 dark:text-slate-700 font-normal select-none">•</span>
             <span className="text-emerald-600 dark:text-emerald-400">{t('heroVoiceReg')}</span>
             <span className="text-slate-300 dark:text-slate-700 font-normal select-none">•</span>
             <span className="text-govBlue-600 dark:text-sky-400">{t('heroJobsAgri')}</span>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
           </p>
         </ScrollReveal>
 
@@ -184,10 +242,17 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             <ScrollReveal>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white flex items-center justify-center gap-2">
                 <ShieldCheck className="w-8 h-8 text-teal-500" />
+<<<<<<< HEAD
+                🛡️ Trust & Verification System
+              </h2>
+              <p className="mt-4 text-slate-500 dark:text-slate-400 text-lg">
+                "Every worker and employer is verified to eliminate hiring scams and build trust."
+=======
                 🛡️ {t('trustSectionTitle')}
               </h2>
               <p className="mt-4 text-slate-500 dark:text-slate-400 text-lg">
                 "{t('trustSectionSubtitle')}"
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </p>
             </ScrollReveal>
           </div>
@@ -209,13 +274,21 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                       <span className="text-2xl font-bold text-slate-900 dark:text-white">{workerScore}</span>
+<<<<<<< HEAD
+                      <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Score</span>
+=======
                       <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">{t('scoreLabel')}</span>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     </div>
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                       Worker Trust Score
+<<<<<<< HEAD
+                      <span className="px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-xs font-semibold">Verified</span>
+=======
                       <span className="px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-xs font-semibold">{t('verified')}</span>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     </h3>
                     <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal-500" /> Aadhaar Verified</li>
@@ -245,13 +318,21 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                       <span className="text-2xl font-bold text-slate-900 dark:text-white">{employerScore}</span>
+<<<<<<< HEAD
+                      <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Score</span>
+=======
                       <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">{t('scoreLabel')}</span>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     </div>
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                       Employer Trust Score
+<<<<<<< HEAD
+                      <span className="px-2 py-0.5 rounded-full bg-govBlue-500/10 text-govBlue-600 dark:text-govBlue-400 text-xs font-semibold">Premium Recruiter</span>
+=======
                       <span className="px-2 py-0.5 rounded-full bg-govBlue-500/10 text-govBlue-600 dark:text-govBlue-400 text-xs font-semibold">{t('premiumRecruiter')}</span>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     </h3>
                     <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-govBlue-500" /> Aadhaar Verified</li>
@@ -275,7 +356,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             <ScrollReveal>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white flex items-center justify-center gap-2">
                 <AlertTriangle className="w-8 h-8 text-amber-500 animate-bounce" />
+<<<<<<< HEAD
+                📊 India's Employment Challenges
+=======
                 📊 {t('challengeTitle')}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </h2>
             </ScrollReveal>
           </div>
@@ -284,29 +369,51 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             {[
               {
                 stat: '80%',
+<<<<<<< HEAD
+                title: 'Lack Digital Profiles',
+                desc: 'Informal workers struggle to showcase their skills online due to technological and literacy barriers.',
+=======
                 title: t('challengeLackProfiles'),
                 desc: t('challengeLackProfilesDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'border-l-4 border-red-500',
                 iconBg: 'bg-red-500/10 text-red-600',
               },
               {
+<<<<<<< HEAD
+                stat: 'Millions',
+                title: 'Face Job Scams',
+                desc: 'Unsuspecting rural workers are trapped by fake job offers demanding upfront recruitment charges.',
+=======
                 stat: t('challengeMillions'),
                 title: t('challengeJobScams'),
                 desc: t('challengeJobScamsDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'border-l-4 border-amber-500',
                 iconBg: 'bg-amber-500/10 text-amber-600',
               },
               {
                 stat: '90%',
+<<<<<<< HEAD
+                title: 'English Barrier',
+                desc: 'Job-seeking rural workers lose out on opportunities because platforms support only English text.',
+=======
                 title: t('challengeEnglishBarrier'),
                 desc: t('challengeEnglishBarrierDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'border-l-4 border-sky-500',
                 iconBg: 'bg-sky-500/10 text-sky-600',
               },
               {
+<<<<<<< HEAD
+                stat: 'Seasonal',
+                title: 'Labour Shortages',
+                desc: 'Farmers run out of labourers during peak harvest, leading to massive crop losses across regions.',
+=======
                 stat: t('challengeSeasonal'),
                 title: t('challengeLabourShortages'),
                 desc: t('challengeLabourShortagesDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'border-l-4 border-emerald-500',
                 iconBg: 'bg-emerald-500/10 text-emerald-600',
               },
@@ -326,7 +433,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
           <ScrollReveal delay={400}>
             <div className="text-center p-6 rounded-2xl bg-teal-500/5 border border-teal-500/20 max-w-4xl mx-auto">
               <p className="text-slate-800 dark:text-teal-200 text-lg font-medium">
+<<<<<<< HEAD
+                "JeevanSetu solves these challenges through AI, Voice Technology, Government Verification, and Smart Employment Matching."
+=======
                 "{t('challengeQuote')}"
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </p>
             </div>
           </ScrollReveal>
@@ -340,7 +451,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             <ScrollReveal>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white flex items-center justify-center gap-2">
                 <Sprout className="w-8 h-8 text-emerald-500" />
+<<<<<<< HEAD
+                🌾 Smart Agriculture Network
+=======
                 🌾 {t('agriTitle')}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </h2>
               <p className="mt-4 text-slate-500 dark:text-slate-400">
                 Direct peer-to-peer agriculture marketplace matching farmers, machinery rentals, and labor at verified fair market rates.
@@ -352,44 +467,80 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             {[
               {
                 icon: Wrench,
+<<<<<<< HEAD
+                title: 'Equipment Rental',
+                desc: 'Rent harvesters, tractors, sprayers directly from neighboring owners. Prevents peak-season rate manipulation.',
+                action: 'Rent Equipment',
+=======
                 title: t('agriEquipmentTitle'),
                 desc: t('agriEquipmentDesc'),
                 action: t('agriEquipmentAction'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-emerald-500/10 to-teal-500/10 hover:shadow-emerald-500/20',
               },
               {
                 icon: Users,
+<<<<<<< HEAD
+                title: 'Farm Labour Hiring',
+                desc: 'Hire skilled harvesters, planters, and daily agricultural support easily with local distance parameters.',
+                action: 'Hire Labourers',
+=======
                 title: t('agriLabourTitle'),
                 desc: t('agriLabourDesc'),
                 action: t('agriLabourAction'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-blue-500/10 to-cyan-500/10 hover:shadow-blue-500/20',
               },
               {
                 icon: CloudSun,
+<<<<<<< HEAD
+                title: 'Weather Forecasts',
+                desc: 'Hyper-local weather warnings integrated with recommendations for harvesting schedules and pesticide application.',
+                action: 'Check Weather',
+=======
                 title: t('agriWeatherTitle'),
                 desc: t('agriWeatherDesc'),
                 action: t('agriWeatherAction'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-amber-500/10 to-yellow-500/10 hover:shadow-amber-500/20',
               },
               {
                 icon: TrendingUp,
+<<<<<<< HEAD
+                title: 'Market Price Intelligence',
+                desc: 'Real-time daily grain, fruit, and vegetable pricing insights tracking fair retail and wholesale values.',
+                action: 'View Pricing',
+=======
                 title: t('agriMarketTitle'),
                 desc: t('agriMarketDesc'),
                 action: t('agriMarketAction'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-teal-500/10 to-indigo-500/10 hover:shadow-teal-500/20',
               },
               {
                 icon: HelpCircle,
+<<<<<<< HEAD
+                title: 'Crop Advisory',
+                desc: 'AI chatbot advises on soil care, crop rotation, organic farming solutions, and common pest treatments.',
+                action: 'Get Advice',
+=======
                 title: t('agriCropTitle'),
                 desc: t('agriCropDesc'),
                 action: t('agriCropAction'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-rose-500/10 to-orange-500/10 hover:shadow-rose-500/20',
               },
               {
                 icon: MapPin,
+<<<<<<< HEAD
+                title: 'Nearby Mandi Information',
+                desc: 'Compare rates between multiple regional APMC Mandis to choose the best selling point for your harvest.',
+                action: 'Find Mandis',
+=======
                 title: t('agriMandiTitle'),
                 desc: t('agriMandiDesc'),
                 action: t('agriMandiAction'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-cyan-500/10 to-sky-500/10 hover:shadow-cyan-500/20',
               },
             ].map((item, idx) => (
@@ -423,7 +574,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             <ScrollReveal>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white flex items-center justify-center gap-2">
                 <Globe2 className="w-8 h-8 text-govBlue-500" />
+<<<<<<< HEAD
+                🗣️ Speak In Your Language
+=======
                 🗣️ {t('voiceSectionTitle')}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </h2>
             </ScrollReveal>
           </div>
@@ -455,7 +610,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 
                 {/* Voice Circle */}
                 <div className="relative mb-8">
+<<<<<<< HEAD
+                  {isVoiceActive && (
+=======
                   {isListening && (
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     <>
                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-govBlue-500 to-teal-500 pulse-ring scale-150 opacity-30" />
                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-govBlue-500 to-teal-500 pulse-ring scale-125 opacity-40 animate-pulse" />
@@ -464,7 +623,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                   <button
                     onClick={handleVoiceDemo}
                     className={`relative w-28 h-28 rounded-full bg-gradient-to-br from-govBlue-500 to-teal-600 flex items-center justify-center text-white shadow-lg transition-transform hover:scale-105 active:scale-95 ${
+<<<<<<< HEAD
+                      isVoiceActive ? 'animate-pulse' : ''
+=======
                       isListening ? 'animate-pulse' : ''
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     }`}
                   >
                     <Mic className="w-10 h-10" />
@@ -472,12 +635,21 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 </div>
 
                 <div className="h-16 flex items-center justify-center">
+<<<<<<< HEAD
+                  <p className="text-sm font-medium text-slate-600 dark:text-slate-300 italic px-4">
+                    {voiceText}
+                  </p>
+                </div>
+
+                {isVoiceActive && (
+=======
                   <p className={`text-sm font-medium italic px-4 ${error ? 'text-red-500' : 'text-slate-600 dark:text-slate-300'}`}>
                     {getVoiceText()}
                   </p>
                 </div>
 
                 {isListening && !error && (
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                   <div className="flex gap-1.5 justify-center mt-2">
                     {[1, 2, 3, 4, 5, 6].map((bar) => (
                       <div
@@ -490,7 +662,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 )}
 
                 <p className="mt-6 text-xs text-slate-400 dark:text-slate-500">
+<<<<<<< HEAD
+                  "No typing required. Simply speak in your preferred language."
+=======
                   "{t('voiceNoTyping')}"
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 </p>
               </div>
             </ScrollReveal>
@@ -505,7 +681,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             <ScrollReveal>
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white flex items-center justify-center gap-2">
                 <Bot className="w-8 h-8 text-teal-500" />
+<<<<<<< HEAD
+                🤖 AI-Powered Features
+=======
                 🤖 {t('aiSectionTitle')}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </h2>
             </ScrollReveal>
           </div>
@@ -513,6 +693,36 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+<<<<<<< HEAD
+                title: 'Voice Profile Creation',
+                desc: 'Register profiles and resumes seamlessly by answering assistant voice prompts in regional dialects.',
+                badge: 'Active',
+              },
+              {
+                title: 'Smart Job Matching',
+                desc: 'Our semantic matchers connect workers to localized employment openings fitting their exact abilities.',
+                badge: 'Active',
+              },
+              {
+                title: 'AI Scam Detection',
+                desc: 'Real-time profile analyzing blocks potential scam patterns, overpricing habits, and dummy listings.',
+                badge: 'Active',
+              },
+              {
+                title: 'AI Resume Generation',
+                desc: 'Transform raw voice transcripts into structured resume credentials verified directly with Aadhaar.',
+                badge: 'Beta',
+              },
+              {
+                title: 'Voice-Based Job Applications',
+                desc: 'Apply to jobs immediately with simple audio submissions. Perfect for illiterate and semi-literate users.',
+                badge: 'Active',
+              },
+              {
+                title: 'Career Growth Recommendations',
+                desc: 'Calculates local job trends and recommends adjacent skills to upgrade worker income potentials.',
+                badge: 'Beta',
+=======
                 title: t('aiVoiceProfile'),
                 desc: t('aiVoiceProfileDesc'),
                 badge: t('badgeActive'),
@@ -541,13 +751,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 title: t('aiCareerGrowth'),
                 desc: t('aiCareerGrowthDesc'),
                 badge: t('badgeBeta'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               },
             ].map((feat, idx) => (
               <ScrollReveal key={idx} delay={(idx % 3 * 100) as any}>
                 <div className={`${darkMode ? 'glass-card-dark' : 'glass-card'} p-6 h-full flex flex-col justify-between border border-slate-200/50 dark:border-slate-800 hover:border-teal-500/30 transition-colors relative overflow-hidden group`}>
                   <div className="absolute top-3 right-3">
                     <span className={`px-2 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider ${
+<<<<<<< HEAD
+                      feat.badge === 'Active' ? 'bg-teal-500/10 text-teal-600 dark:text-teal-400' : 'bg-govBlue-500/10 text-govBlue-600 dark:text-sky-400'
+=======
                       feat.badge === t('badgeActive') ? 'bg-teal-500/10 text-teal-600 dark:text-teal-400' : 'bg-govBlue-500/10 text-govBlue-600 dark:text-sky-400'
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     }`}>
                       {feat.badge}
                     </span>
@@ -582,12 +797,21 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             {/* Descriptive Content */}
             <ScrollReveal>
               <div className="space-y-6">
+<<<<<<< HEAD
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Verify Instantly with Secure QR Codes</h3>
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  "Every worker receives a secure digital employment identity that can be instantly verified by employers through QR scanning."
+                </p>
+                <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
+                  This card combines Aadhaar validity status, a real-time calculated verification trust score, certified skills checklist, and experience counters. Employers scan the card on their phones to confirm the profile's legitimacy instantly without paperwork.
+=======
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t('cardVerifyQR')}</h3>
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                   "{t('cardDesc1')}"
                 </p>
                 <p className="text-slate-500 dark:text-slate-400 leading-relaxed">
                   {t('cardDesc2')}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 </p>
                 <button
                   onClick={() => onNavigate('dashboard')}
@@ -609,7 +833,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                   <div className="flex justify-between items-start border-b border-white/10 pb-3">
                     <div>
                       <h4 className="text-xs font-bold tracking-widest text-teal-400 uppercase">JeevanSetu</h4>
+<<<<<<< HEAD
+                      <p className="text-[9px] text-slate-400">Govt. Verified Worker Identity Card</p>
+=======
                       <p className="text-[9px] text-slate-400">{t('cardGovtId')}</p>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                     </div>
                     <span className="text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30 flex items-center gap-1">
                       <ShieldCheck className="w-3 h-3" />
@@ -635,6 +863,22 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                     {/* Details */}
                     <div className="flex-1 min-w-0">
                       <h5 className="text-lg font-bold truncate">Ramesh Pujari</h5>
+<<<<<<< HEAD
+                      <p className="text-xs text-teal-400 font-semibold mt-0.5">Agriculture Specialist</p>
+                      
+                      <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 mt-3 text-[10px] text-slate-300">
+                        <div>
+                          <p className="text-slate-400 font-light">EXP</p>
+                          <p className="font-semibold">6+ Years</p>
+                        </div>
+                        <div>
+                          <p className="text-slate-400 font-light">TRUST SCORE</p>
+                          <p className="font-semibold text-emerald-400">92 / 100</p>
+                        </div>
+                        <div className="col-span-2">
+                          <p className="text-slate-400 font-light">SKILLS</p>
+                          <p className="font-semibold truncate">Harvesting • Tractor Ops • Irrigation</p>
+=======
                       <p className="text-xs text-teal-400 font-semibold mt-0.5">{t('cardAgriSpecialist')}</p>
                       
                       <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 mt-3 text-[10px] text-slate-300">
@@ -649,6 +893,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                         <div className="col-span-2">
                           <p className="text-slate-400 font-light">{t('cardSkillsLabel')}</p>
                           <p className="font-semibold truncate">{t('cardSkillsList')}</p>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                         </div>
                       </div>
                     </div>
@@ -692,10 +937,17 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
                 National Vision
               </div>
               <h2 className="text-3xl sm:text-5xl font-black tracking-tight flex items-center justify-center gap-2 text-white">
+<<<<<<< HEAD
+                🚀 Potential National Impact
+              </h2>
+              <p className="mt-4 text-slate-400 text-lg">
+                Building India's largest verified employment infrastructure for the informal workforce.
+=======
                 🚀 {t('impactTitle')}
               </h2>
               <p className="mt-4 text-slate-400 text-lg">
                 {t('impactSubtitle')}
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </p>
             </ScrollReveal>
           </div>
@@ -705,43 +957,76 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             {[
               {
                 stat: '500M+',
+<<<<<<< HEAD
+                label: 'Workers Empowered',
+                desc: 'Connecting daily laborers, painters, electricians and helpers to stable jobs.',
+=======
                 label: t('impactWorkersLabel'),
                 desc: t('impactWorkersDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-blue-500/20 to-cyan-500/10 border-blue-500/30',
                 glowColor: 'bg-blue-500',
               },
               {
                 stat: '120M+',
+<<<<<<< HEAD
+                label: 'Farmers Connected',
+                desc: 'Preventing situational crop overpricing and coordinating farm labour shortages.',
+=======
                 label: t('impactFarmersLabel'),
                 desc: t('impactFarmersDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/30',
                 glowColor: 'bg-emerald-500',
               },
               {
+<<<<<<< HEAD
+                stat: 'Millions',
+                label: 'Employers Verified',
+                desc: 'Eliminating job site fraud with GST checks and upfront payment guarantees.',
+=======
                 stat: t('challengeMillions'),
                 label: t('impactEmployersLabel'),
                 desc: t('impactEmployersDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-indigo-500/20 to-purple-500/10 border-indigo-500/30',
                 glowColor: 'bg-indigo-500',
               },
               {
                 stat: '22+',
+<<<<<<< HEAD
+                label: 'Indian Languages',
+                desc: 'Supporting regional dialects to make voice profile registration accessible.',
+=======
                 label: t('impactLanguagesLabel'),
                 desc: t('impactLanguagesDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-rose-500/20 to-orange-500/10 border-rose-500/30',
                 glowColor: 'bg-rose-500',
               },
               {
+<<<<<<< HEAD
+                stat: 'Thousands',
+                label: 'Villages Covered',
+                desc: 'Hyper-local geofencing lists local job openings within short walking ranges.',
+=======
                 stat: t('impactThousands'),
                 label: t('impactVillagesLabel'),
                 desc: t('impactVillagesDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-teal-500/20 to-sky-500/10 border-teal-500/30',
                 glowColor: 'bg-teal-500',
               },
               {
+<<<<<<< HEAD
+                stat: 'Zero Scam',
+                label: 'Hiring Vision',
+                desc: 'Platform backed by automatic three-strike reports and blacklist blockades.',
+=======
                 stat: t('impactZeroScam'),
                 label: t('impactHiringVision'),
                 desc: t('impactHiringVisionDesc'),
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
                 color: 'from-amber-500/20 to-yellow-500/10 border-amber-500/30',
                 glowColor: 'bg-amber-500',
               },
@@ -765,6 +1050,17 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             <div className="text-center border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
+<<<<<<< HEAD
+                <span>Partnered with National Career Service (NCS)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-govBlue-500" />
+                <span>Aadhaar Identity API Sandboxed integration</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                <span>Digital India Initiative Supporting Platform</span>
+=======
                 <span>{t('impactNCS')}</span>
               </div>
               <div className="flex items-center gap-2">
@@ -774,6 +1070,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
                 <span>{t('impactDigitalIndia')}</span>
+>>>>>>> b2b364f6c9d4af2eece31998dc4bd6bae08eef70
               </div>
             </div>
           </ScrollReveal>
